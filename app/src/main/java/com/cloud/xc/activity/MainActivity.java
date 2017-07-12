@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.cloud.xc.R;
 import com.cloud.xc.adapter.MainPagerAdapter;
+import com.cloud.xc.annotation.CloudContentView;
+import com.cloud.xc.annotation.CloudFindView;
+import com.cloud.xc.annotation.CloudViewInject;
 import com.cloud.xc.fragment.Fragment1;
 import com.cloud.xc.fragment.Fragment2;
 import com.cloud.xc.fragment.Fragment3;
@@ -19,23 +22,29 @@ import com.cloud.xc.view.BottomNavigationView.BottomNavigationView;
 import com.cloud.xc.view.BottomNavigationView.OnBottomNavigationItemClickListener;
 import com.cloud.xc.view.TitleBar;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@CloudContentView(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
+
+    @CloudFindView(R.id.titleBar)
     private TitleBar titleBar;
-    private ImageView rightbtn;
+    @CloudFindView(R.id.viewPager)
     private ViewPager viewPager;
-    private MainPagerAdapter mMainPagerAdapter;
+    @CloudFindView(R.id.bottomNavigation)
     private BottomNavigationView bottomNavigationView;
+
+    private MainPagerAdapter mMainPagerAdapter;
+    private ImageView rightbtn;
     private List<Fragment> mFragments = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        titleBar = (TitleBar) findViewById(R.id.titleBar);
+        CloudViewInject.inject(this);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);
         initTitleBar();
         initFragment();
