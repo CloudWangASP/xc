@@ -42,7 +42,7 @@ public class Fragment3 extends Fragment {
             super.handleMessage(msg);
             long time = msg.getData().getLong("time");
             if (time == 0) {
-                mTextView.setVisibility(View.GONE);
+                mTextView.setText("执行完毕！");
                 handler.removeCallbacks(mDelayThread);
             } else {
                 mTextView.setText("倒计时" + time / 1000 + "秒");
