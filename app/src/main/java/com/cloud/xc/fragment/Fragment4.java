@@ -21,6 +21,7 @@ public class Fragment4 extends Fragment {
 
     private Button callback;
     private TestCallBack mTestCallBack = new TestCallBack();
+    private OnTitleChangeListener mOnTitleChangeListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,9 +38,17 @@ public class Fragment4 extends Fragment {
             @Override
             public void onClick(View v) {
                 mTestCallBack.onChange();
+                mOnTitleChangeListener.changeTitle("标题回调");
             }
         });
         return v;
     }
 
+    public interface OnTitleChangeListener {
+        void changeTitle(String title);
+    }
+
+    public void setOnTitleChangerListener(OnTitleChangeListener mOnTitleChangeListener) {
+        this.mOnTitleChangeListener = mOnTitleChangeListener;
+    }
 }

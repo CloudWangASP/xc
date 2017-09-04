@@ -27,8 +27,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @CloudContentView(R.layout.activity_main)
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Fragment4.OnTitleChangeListener {
 
     @CloudFindView(R.id.titleBar)
     private TitleBar titleBar;
@@ -87,10 +88,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFragment() {
         String[] title = {"铃铛", "麋鹿", "红酒", "圣诞"};
+        Fragment4 fragment4 = new Fragment4();
+        fragment4.setOnTitleChangerListener(this);
         mFragments.add(new Fragment1());
         mFragments.add(new Fragment2());
         mFragments.add(new Fragment3());
-        mFragments.add(new Fragment4());
+        mFragments.add(fragment4);
         mMainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), mFragments, title);
         viewPager.setAdapter(mMainPagerAdapter);
         viewPager.setCurrentItem(0);
@@ -130,4 +133,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void changeTitle(String title) {
+        titleBar.setTitle(title);
+    }
 }
