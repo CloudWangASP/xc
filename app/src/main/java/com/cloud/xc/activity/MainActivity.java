@@ -1,5 +1,6 @@
 package com.cloud.xc.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -21,9 +22,6 @@ import com.cloud.xc.fragment.Fragment4;
 import com.cloud.xc.view.BottomNavigationView.BottomNavigationView;
 import com.cloud.xc.view.BottomNavigationView.OnBottomNavigationItemClickListener;
 import com.cloud.xc.view.TitleBar;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements Fragment4.OnTitle
         titleBar.addAction(new TitleBar.TextAction("发布") {
             @Override
             public void performAction(View view) {
-                Toast.makeText(MainActivity.this, "右侧", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent().setClass(MainActivity.this, MyDemoActivity.class));
             }
         });
         titleBar.setImmersive(true);
