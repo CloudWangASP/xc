@@ -50,7 +50,7 @@ public class AsyncExpandableListView<T1, T2> extends CollectionView<T1, T2> {
 
         void onGroupExpanded();
 
-        void onGroupCollapsed();
+        void onGroupCollapsed(int groupId);
     }
 
 
@@ -95,7 +95,7 @@ public class AsyncExpandableListView<T1, T2> extends CollectionView<T1, T2> {
         removeAllItemsInGroup(groupOrdinal);
         for (OnGroupStateChangeListener onGroupStateChangeListener : mOnGroupStateChangeListeners.keySet()) {
             if (mOnGroupStateChangeListeners.get(onGroupStateChangeListener) == groupOrdinal) {
-                onGroupStateChangeListener.onGroupCollapsed();
+                onGroupStateChangeListener.onGroupCollapsed(groupOrdinal);
             }
         }
     }

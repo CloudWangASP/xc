@@ -33,7 +33,7 @@ public class MyDemoActivity extends AppCompatActivity implements AsyncExpandable
         mAsyncExpandableListView.setCallbacks(this);
         inventory = new CollectionView.Inventory<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 4; i++) {
             CollectionView.InventoryGroup<String, String> group = inventory.newGroup(i);
             group.setHeaderItem("查看趋势");
         }
@@ -110,6 +110,9 @@ public class MyDemoActivity extends AppCompatActivity implements AsyncExpandable
             super(itemView, groupOrdinal, asyncExpandableListView);
             tip = (TextView) itemView.findViewById(R.id.tip);
             devideLine = itemView.findViewById(R.id.devideLine);
+            if (groupOrdinal == 3) {
+                devideLine.setVisibility(View.INVISIBLE);
+            }
         }
 
         @Override
@@ -124,9 +127,11 @@ public class MyDemoActivity extends AppCompatActivity implements AsyncExpandable
         }
 
         @Override
-        public void onGroupCollapsed() {
+        public void onGroupCollapsed(int groupId) {
             tip.setText("查看趋势");
-            devideLine.setVisibility(View.VISIBLE);
+            if (groupId != 3) {
+                devideLine.setVisibility(View.VISIBLE);
+            }
         }
 
         public TextView getTextView() {
