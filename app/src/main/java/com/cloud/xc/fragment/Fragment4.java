@@ -35,7 +35,7 @@ public class Fragment4 extends Fragment {
         arrayList.add("一天");
         arrayList.add("一周");
         arrayList.add("一月");
-        segment.init(3, arrayList);
+        segment.init(arrayList.size(), arrayList);
 
         mTestCallBack.setCallBack(new CallBack() {
             @Override

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements Fragment4.OnTitle
         titleBar.setLeftClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "左侧", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent().setClass(MainActivity.this, MyDemo2Activity.class));
             }
         });
 
