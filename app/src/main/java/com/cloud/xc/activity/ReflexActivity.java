@@ -3,6 +3,7 @@ package com.cloud.xc.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.TypedValue;
 
 import com.cloud.xc.R;
 import com.cloud.xc.model.TestModel;
@@ -11,15 +12,18 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-public class MyDemo2Activity extends AppCompatActivity {
+public class ReflexActivity extends AppCompatActivity {
     Object obj;
     Method[] methodArray;
-    private static final String TAG = "反射";
+    private static final String TAG = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_demo2);
+
+        float sss = TypedValue.applyDimension(10, TypedValue.COMPLEX_UNIT_DIP, getResources().getDisplayMetrics());
+        Log.d(TAG, sss + "");
 
         Class clz = TestModel.class;
         try {

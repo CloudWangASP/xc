@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyDemoActivity extends AppCompatActivity implements AsyncExpandableListViewCallbacks<String, String> {
+public class ExpandableListActivity extends AppCompatActivity implements AsyncExpandableListViewCallbacks<String, String> {
 
     private AsyncExpandableListView<String, String> mAsyncExpandableListView;
     private CollectionView.Inventory<String, String> inventory;
