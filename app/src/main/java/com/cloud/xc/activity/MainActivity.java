@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements Fragment4.OnTitle
         titleBar.setLeftClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent().setClass(MainActivity.this, ReflexActivity.class));
+                startActivity(new Intent().setClass(MainActivity.this, DeviceInfoActivity.class));
             }
         });
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements Fragment4.OnTitle
         titleBar.addAction(new TitleBar.TextAction("发布") {
             @Override
             public void performAction(View view) {
-                startActivity(new Intent().setClass(MainActivity.this, ExpandableListActivity.class));
+                startActivity(new Intent().setClass(MainActivity.this, BottomViewActivity.class));
             }
         });
         titleBar.setImmersive(true);

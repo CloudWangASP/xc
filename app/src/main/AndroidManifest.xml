@@ -39,6 +39,12 @@
         </activity>
         <activity android:name=".activity.ReflexActivity">
         </activity>
+        <activity android:name=".activity.DeviceInfoActivity">
+        </activity>
+        <activity
+            android:name=".activity.BottomViewActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
     </application>
 
 </manifest>
