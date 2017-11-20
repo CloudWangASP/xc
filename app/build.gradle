@@ -30,5 +30,18 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.amap.api:map2d:latest.integration'
     compile 'com.amap.api:location:latest.integration'
+
+    compile 'com.facebook.litho:litho-core:0.2.0'
+    compile 'com.facebook.litho:litho-widget:0.2.0'
+    provided 'com.facebook.litho:litho-annotations:0.2.0'
+    annotationProcessor 'com.facebook.litho:litho-processor:0.2.0'
+
+    // SoLoader
+    compile 'com.facebook.soloader:soloader:0.2.0'
+    // 调试选项
+    debugCompile 'com.facebook.litho:litho-stetho:0.2.0'
+    // 集成Fresco的支持
+    compile 'com.facebook.litho:litho-fresco:0.2.0'
+
     testCompile 'junit:junit:4.12'
 }

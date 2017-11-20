@@ -1,6 +1,8 @@
 package com.cloud.xc.activity;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -8,9 +10,14 @@ import android.widget.TextView;
 import com.cloud.xc.R;
 import com.cloud.xc.view.BottomDialog;
 
+import java.util.List;
+
 public class BottomViewActivity extends AppCompatActivity {
     //自定义的弹出框类
     BottomDialog mDialog;
+    List<String> appList;
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
