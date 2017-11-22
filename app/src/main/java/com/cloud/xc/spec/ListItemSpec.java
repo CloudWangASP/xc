@@ -14,6 +14,7 @@ import com.facebook.litho.widget.VerticalGravity;
 import static android.widget.ImageView.ScaleType.FIT_XY;
 import static com.facebook.yoga.YogaEdge.ALL;
 import static com.facebook.yoga.YogaEdge.LEFT;
+import static com.facebook.yoga.YogaEdge.TOP;
 
 /**
  * Created by cloud on 2017/11/20.
@@ -22,9 +23,7 @@ import static com.facebook.yoga.YogaEdge.LEFT;
 public class ListItemSpec {
 
     @OnCreateLayout
-    static ComponentLayout onCreateLayout(ComponentContext c, @Prop int color) {
-
-
+    static ComponentLayout onCreateLayout(ComponentContext c, @Prop int color, @Prop String title) {
         return Row.create(c)
                 .paddingDip(ALL, 16)
                 .backgroundColor(color)
@@ -34,7 +33,7 @@ public class ListItemSpec {
                                 .textSizeSp(40))
                 .child(
                         Text.create(c)
-                                .text("Cloud")
+                                .text(title)
                                 .verticalGravity(VerticalGravity.CENTER)
                                 .textSizeSp(20)
                                 .withLayout()
@@ -45,8 +44,9 @@ public class ListItemSpec {
                                 .drawableRes(R.mipmap.icon1)
                                 .scaleType(FIT_XY)
                                 .withLayout()
-                                .widthDip(20)
-                                .heightDip(20)
+                                .widthDip(40)
+                                .heightDip(40)
+                                .marginDip(TOP, 5)
                                 .marginDip(LEFT, 20)
                 )
                 .build();

@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.cloud.xc.R;
 import com.cloud.xc.adapter.MainPagerAdapter;
@@ -69,9 +68,9 @@ public class MainActivity extends AppCompatActivity implements Fragment4.OnTitle
         rightbtn = (ImageView) titleBar.addAction(new TitleBar.ImageAction(R.mipmap.rightbtn) {
             @Override
             public void performAction(View view) {
-                Toast.makeText(MainActivity.this, "右侧", Toast.LENGTH_SHORT).show();
                 rightbtn.setImageResource(R.mipmap.rightbtn);
                 titleBar.setTitle("右侧");
+                startActivity(new Intent().setClass(MainActivity.this, LithoCellActivity.class));
             }
         });
 

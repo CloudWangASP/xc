@@ -48,6 +48,8 @@
         </activity>
         <activity android:name=".activity.LithoActivity">
         </activity>
+        <activity android:name=".activity.LithoCellActivity">
+        </activity>
     </application>
 
 </manifest>

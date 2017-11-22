@@ -2,7 +2,6 @@ package com.cloud.xc.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,7 @@ import com.cloud.xc.utils.ApkTool;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeviceInfoActivity extends AppCompatActivity {
+public class DeviceInfoActivity extends BaseActivity {
     private Handler mHandler = new Handler();
     private List<MyAppInfo> appInfos;
     private ProgressBar progress;
