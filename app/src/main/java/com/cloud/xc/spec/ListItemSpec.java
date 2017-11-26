@@ -21,9 +21,10 @@ import static com.facebook.yoga.YogaEdge.TOP;
  */
 @LayoutSpec
 public class ListItemSpec {
-
     @OnCreateLayout
-    static ComponentLayout onCreateLayout(ComponentContext c, @Prop int color, @Prop String title) {
+    static ComponentLayout onCreateLayout(ComponentContext c,
+                                          @Prop int color,
+                                          @Prop String title) {
         return Row.create(c)
                 .paddingDip(ALL, 16)
                 .backgroundColor(color)

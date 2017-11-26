@@ -50,6 +50,8 @@
         </activity>
         <activity android:name=".activity.LithoCellActivity">
         </activity>
+        <activity android:name=".activity.ViewAndListActivity">
+        </activity>
     </application>
 
 </manifest>

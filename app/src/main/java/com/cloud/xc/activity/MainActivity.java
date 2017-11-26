@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements Fragment4.OnTitle
         titleBar.addAction(new TitleBar.TextAction("发布") {
             @Override
             public void performAction(View view) {
-                startActivity(new Intent().setClass(MainActivity.this, LithoActivity.class));
+                startActivity(new Intent().setClass(MainActivity.this, ViewAndListActivity.class));
             }
         });
         titleBar.setImmersive(true);
