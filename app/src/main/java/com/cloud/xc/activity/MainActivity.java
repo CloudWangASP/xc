@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements Fragment4.OnTitle
             public void performAction(View view) {
                 rightbtn.setImageResource(R.mipmap.rightbtn);
                 titleBar.setTitle("右侧");
-                startActivity(new Intent().setClass(MainActivity.this, LithoCellActivity.class));
+                startActivity(new Intent().setClass(MainActivity.this, MultiTypeListView.class));
             }
         });
 

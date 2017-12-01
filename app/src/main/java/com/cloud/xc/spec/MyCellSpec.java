@@ -30,7 +30,7 @@ public class MyCellSpec {
             ComponentContext c) {
         return Row.create(c)
                 .paddingDip(ALL, 20)
-                .backgroundColor(Color.LTGRAY)
+                .backgroundColor(Color.WHITE)
                 .child(
                         Image.create(c)
                                 .drawableRes(R.mipmap.icon2)
@@ -48,8 +48,8 @@ public class MyCellSpec {
                                                 .textSizeDip(16)
                                                 .withLayout()
                                                 .marginDip(LEFT, 15)
-//                                                .clickHandler(MyCell.onMyClick(c))
-//                                                .touchExpansionDip(ALL, 10)
+                                                .clickHandler(MyCell.onMyClick(c))
+                                                .touchExpansionDip(ALL, 10)
                                 )
                                 .child(
                                         Row.create(c)
@@ -59,7 +59,7 @@ public class MyCellSpec {
                                                         Column.create(c)
                                                                 .child(
                                                                         Text.create(c)
-                                                                                .text("浏览2345")
+                                                                                .text("浏览354")
                                                                                 .textSizeDip(10)
                                                                                 .withLayout()
                                                                 )
@@ -77,22 +77,19 @@ public class MyCellSpec {
                                                                         Column.create(c)
                                                                                 .child(
                                                                                         Text.create(c)
-                                                                                                .text("浏览245")
+                                                                                                .text("点赞86")
                                                                                                 .textSizeDip(10)
                                                                                                 .withLayout()
                                                                                 )
                                                                                 .child(
                                                                                         Text.create(c)
-                                                                                                .text("浏览245")
+                                                                                                .text("好评率98.7%")
                                                                                                 .textSizeDip(10)
                                                                                                 .withLayout()
                                                                                                 .marginDip(TOP, 5))
-
                                                                 )
                                                 )
-
                                 )
-
                 )
                 .build();
 

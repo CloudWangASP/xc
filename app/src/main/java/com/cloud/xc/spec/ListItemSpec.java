@@ -27,6 +27,7 @@ public class ListItemSpec {
                                           @Prop String title) {
         return Row.create(c)
                 .paddingDip(ALL, 16)
+                .marginDip(TOP, 1)
                 .backgroundColor(color)
                 .child(
                         Text.create(c)

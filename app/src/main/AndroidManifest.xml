@@ -50,7 +50,17 @@
         </activity>
         <activity android:name=".activity.LithoCellActivity">
         </activity>
-        <activity android:name=".activity.ViewAndListActivity">
+        <activity android:name=".activity.ViewAndListActivity"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MultiTypeListView"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
     </application>
 

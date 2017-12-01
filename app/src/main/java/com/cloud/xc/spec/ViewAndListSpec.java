@@ -16,15 +16,9 @@ import com.facebook.litho.widget.RecyclerBinder;
 public class ViewAndListSpec {
     @OnCreateLayout
     static ComponentLayout onCreateLayout(ComponentContext c,
-                                          @Prop final RecyclerBinder girdBinder,
                                           @Prop final RecyclerBinder listBinder) {
+
         return Column.create(c)
-                .child(
-                        MyCell.create(c)
-                )
-                .child(
-                        Recycler.create(c).binder(girdBinder)
-                )
                 .child(
                         Recycler.create(c).binder(listBinder)
                 )
