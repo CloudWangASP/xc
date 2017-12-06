@@ -1,9 +1,9 @@
 package com.cloud.xc.spec;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
-import com.cloud.xc.R;
 import com.facebook.litho.ClickEvent;
 import com.facebook.litho.Column;
 import com.facebook.litho.ComponentContext;
@@ -12,6 +12,7 @@ import com.facebook.litho.Row;
 import com.facebook.litho.annotations.LayoutSpec;
 import com.facebook.litho.annotations.OnCreateLayout;
 import com.facebook.litho.annotations.OnEvent;
+import com.facebook.litho.annotations.Prop;
 import com.facebook.litho.widget.Image;
 import com.facebook.litho.widget.Text;
 
@@ -27,17 +28,25 @@ import static com.facebook.yoga.YogaEdge.TOP;
 public class MyCellSpec {
     @OnCreateLayout
     static ComponentLayout onCreateLayout(
-            ComponentContext c) {
+            ComponentContext c,
+            @Prop Drawable drawable) {
         return Row.create(c)
                 .paddingDip(ALL, 20)
                 .backgroundColor(Color.WHITE)
                 .child(
                         Image.create(c)
-                                .drawableRes(R.mipmap.icon2)
+                                .drawable(drawable)
                                 .scaleType(FIT_XY)
                                 .withLayout()
                                 .widthDip(60)
                                 .heightDip(60)
+
+
+//                        FrescoImage.create(c)
+//                                .actualImageScaleType(FIT_XY)
+//                                .withLayout()
+//                                .heightDip(60)
+//                                .heightDip(60).build()
                 )
                 .child(
                         Column.create(c)
@@ -97,7 +106,6 @@ public class MyCellSpec {
 
     @OnEvent(ClickEvent.class)
     public static void onMyClick(ComponentContext c) {
+
     }
-
-
 }
