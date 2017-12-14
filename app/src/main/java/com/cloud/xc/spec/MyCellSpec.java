@@ -41,7 +41,6 @@ public class MyCellSpec {
                                 .widthDip(60)
                                 .heightDip(60)
 
-
 //                        FrescoImage.create(c)
 //                                .actualImageScaleType(FIT_XY)
 //                                .withLayout()
