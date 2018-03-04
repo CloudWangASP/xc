@@ -40,12 +40,10 @@ public class ExpandableListActivity extends AppCompatActivity implements AsyncEx
         mAsyncExpandableListView.updateInventory(inventory);
     }
 
-
     @Override
     public void onStartLoadingGroup(int groupOrdinal) {
         new LoadDataTask(groupOrdinal, mAsyncExpandableListView).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
-
 
     private static class LoadDataTask extends AsyncTask<Void, Void, Void> {
 
